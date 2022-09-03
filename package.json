@@ -2,7 +2,7 @@
     "name": "cafdashboard",
     "version": "1.0.0",
     "description": "Simple dashboard for caf unsic boretto e casalmaggiore.",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
         "server": "nodemon server.js",
         "client": "npm start --prefix client",
