@@ -24,7 +24,7 @@ async function getClients(
 ) {
   const res = await axios
     .get(
-      `/passport?cf=${queryCf}&nome=${queryName}&cognome=${querySurname}&limit=${limit}`
+      `https://unsicapi.azurewebsites.net/passport?cf=${queryCf}&nome=${queryName}&cognome=${querySurname}&limit=${limit}`
     )
     .then((data) => {
       if (data.data.length == 0) {
@@ -70,7 +70,7 @@ function Passport() {
     };
     async function nClients() {
       const res = await axios
-        .get(`/npassport`)
+        .get(`https://unsicapi.azurewebsites.net/npassport`)
         .then(({ data }) => {
           if (data == null) {
             notify("br", 4, "ERROR");

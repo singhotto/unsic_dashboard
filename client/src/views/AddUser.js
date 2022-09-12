@@ -101,7 +101,7 @@ function AddUser() {
     if (cf) {
       try {
         const res = await axios
-          .get(`/user/${cf}`)
+          .get(`https://unsicapi.azurewebsites.net/user/${cf}`)
           .then((data) => {
             if (!data.data) {
               notify("br", 3, "Client Not Found!!!");
@@ -153,7 +153,7 @@ function AddUser() {
       } else {
         let res = await axios({
           method: "post",
-          url: `/user/${cf}`,
+          url: `https://unsicapi.azurewebsites.net/user/${cf}`,
           data: {
             cf,
             cognome: sname,

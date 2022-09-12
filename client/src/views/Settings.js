@@ -38,7 +38,7 @@ function Settings() {
     setUpdate(false);
     async function getAllCities() {
       try {
-        const res = await axios.get(`/all-cities`);
+        const res = await axios.get(`https://unsicapi.azurewebsites.net/all-cities`);
         if (res.data) {
           setAllCities(
             res.data[0].comune.map((city) => {
@@ -52,7 +52,7 @@ function Settings() {
     }
     async function getDefaultCities() {
       try {
-        const res = await axios.get(`/cities`);
+        const res = await axios.get(`https://unsicapi.azurewebsites.net/cities`);
         if (res.data) {
           setCities(
             res.data.map((city) => {
@@ -66,7 +66,7 @@ function Settings() {
     }
     async function getNumberOfClients() {
       try {
-        const res = await axios.get(`/clients`);
+        const res = await axios.get(`https://unsicapi.azurewebsites.net/clients`);
         if (res.data) {
           notify("br", 2, `*** ${res.data} CLIENTS FOUND.***`)
         }
@@ -129,7 +129,7 @@ function Settings() {
       formData.append("fileName", fileName);
       try {
         setLoading(true);
-        const res = await axios.post("/read", formData);
+        const res = await axios.post("https://unsicapi.azurewebsites.net/read", formData);
         if (res.data.code == 200) {
           notify("br", 2, res.data.message);
           setLoading(false);
@@ -147,7 +147,7 @@ function Settings() {
       try {
         const res = await axios({
           method: "post",
-          url: `/cities`,
+          url: `https://unsicapi.azurewebsites.net/cities`,
           data: { comune: a.option.value },
         });
         console.log(res);
@@ -161,7 +161,7 @@ function Settings() {
       try {
         const res = await axios({
           method: "delete",
-          url: `/rmcity/${a.removedValue.value}`,
+          url: `https://unsicapi.azurewebsites.net/rmcity/${a.removedValue.value}`,
         });
         if (res.data) {
           setUpdate(true);

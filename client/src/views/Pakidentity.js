@@ -25,7 +25,7 @@ async function getClients(
 ) {
   const res = await axios
     .get(
-      `/id?cf=${queryCf}&nome=${queryName}&cognome=${querySurname}&limit=${limit}`
+      `https://unsicapi.azurewebsites.net/id?cf=${queryCf}&nome=${queryName}&cognome=${querySurname}&limit=${limit}`
     )
     .then((data) => {
       if (data.data.length == 0) {
@@ -71,7 +71,7 @@ function PakIdentity() {
     };
     async function nClients() {
       const res = await axios
-        .get(`/nid`)
+        .get(`https://unsicapi.azurewebsites.net/nid`)
         .then(({ data }) => {
           if (data == null) {
             notify("br", 4, "ERROR");

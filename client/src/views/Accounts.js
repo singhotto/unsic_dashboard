@@ -74,7 +74,7 @@ function Accounts() {
     setUpdate(false);
     const fatchClient = async () => {
       const res = await axios
-        .get(`/account`)
+        .get(`https://unsicapi.azurewebsites.net/account`)
         .then((data) => {
           if (data.data.length == 0) {
             notify("br", 3, "No Account Yet");
@@ -100,7 +100,7 @@ function Accounts() {
     try {
       const res = await axios({
         method: "post",
-        url: `/account`,
+        url: `https://unsicapi.azurewebsites.net/account`,
         data: {
           id,
           account,
@@ -123,7 +123,7 @@ function Accounts() {
     try {
       setModal(true);
       const res = await axios
-        .get(`/account/${id}`)
+        .get(`https://unsicapi.azurewebsites.net/account/${id}`)
         .then((data) => {
           console.log(data);
           if (data.data.length == 0) {
@@ -144,7 +144,7 @@ function Accounts() {
     try {
       const res = await axios({
         method: "delete",
-        url: `/rmac/${id}`
+        url: `https://unsicapi.azurewebsites.net/rmac/${id}`
       });
       if (res.data) {
         setUpdate(true);
@@ -160,7 +160,7 @@ function Accounts() {
     try {
       const res = await axios({
         method: "put",
-        url: `/accountUpdate`,
+        url: `https://unsicapi.azurewebsites.net/accountUpdate`,
         data: {
           id,
           account: editAccount,

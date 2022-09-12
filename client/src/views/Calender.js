@@ -225,7 +225,7 @@ function Calender() {
     setUpdate(false);
     const getData = async () => {
       const res = axios
-        .get("/get-appointments")
+        .get("https://unsicapi.azurewebsites.net/get-appointments")
         .then((data) => {
           if (data.data.length > 0) {
             setData(
@@ -251,7 +251,7 @@ function Calender() {
       try {
         const res = await axios({
           method: "post",
-          url: `/add-appointment`,
+          url: `https://unsicapi.azurewebsites.net/add-appointment`,
           data: added,
         });
 
@@ -275,7 +275,7 @@ function Calender() {
         const keys = Object.keys(changed);
         const res = await axios({
           method: "put",
-          url: `/update-appointment/${keys[0]}`,
+          url: `https://unsicapi.azurewebsites.net/update-appointment/${keys[0]}`,
           data: changed[keys[0]],
         });
         if (res.data.status == "ok") {
@@ -290,7 +290,7 @@ function Calender() {
         setUpdate(false);
         const res = await axios({
           method: "delete",
-          url: `/delete-appointment/${deleted}`,
+          url: `https://unsicapi.azurewebsites.net/delete-appointment/${deleted}`,
         });
         if (res.data.status == "ok") {
           setUpdate(true);

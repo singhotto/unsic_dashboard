@@ -25,7 +25,7 @@ async function getClients(
 ) {
   const res = await axios
     .get(
-      `/rf?cf=${queryCf}&nome=${queryName}&cognome=${querySurname}&limit=${limit}`
+      `https://unsicapi.azurewebsites.net/rf?cf=${queryCf}&nome=${queryName}&cognome=${querySurname}&limit=${limit}`
     )
     .then((data) => {
       if (data.data.length == 0) {
@@ -70,7 +70,7 @@ function Rf() {
     };
     async function nClients() {
       const res = await axios
-        .get(`/nrf`)
+        .get(`https://unsicapi.azurewebsites.net/nrf`)
         .then(({ data }) => {
           if (data == null) {
             notify("br", 4, "ERROR");
