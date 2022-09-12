@@ -6,7 +6,7 @@ import Passport from "views/Passport.js";
 import PakIdentity from "views/Pakidentity.js";
 import Settings from "views/Settings.js";
 import Accounts from "views/Accounts.js";
-import Whatsapp from "views/Whatsapp.js";
+//import Whatsapp from "views/Whatsapp.js";
 
 var routes = [
   {
@@ -57,13 +57,13 @@ var routes = [
     component: Accounts,
     layout: "/admin",
   },
-  {
-    path: "/whatsapp",
-    name: "Whatsapp",
-    icon: "fa-brands fa-whatsapp",
-    component: Whatsapp,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/whatsapp",
+  //   name: "Whatsapp",
+  //   icon: "fa-brands fa-whatsapp",
+  //   component: Whatsapp,
+  //   layout: "/admin",
+  // },
   {
     path: "/calender",
     name: "Calender",

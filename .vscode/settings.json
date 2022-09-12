@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e7c1bf08-8e4c-4403-9a0f-1e850465ab63/microsoft.web/sites/subscriptions/e7c1bf08-8e4c-4403-9a0f-1e850465ab63/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/unsicdashboard",
+    "appService.deploySubpath": "."
+}

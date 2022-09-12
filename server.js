@@ -12,6 +12,7 @@ const port = process.env.PORT || 5000;
 const uploadPath = __dirname + "/uploads/"
 
 app.use(cors());
+app.set('port', port);
 app.use(express.json());
 app.use(fileupload());
 app.use(express.static("files"));
@@ -29,7 +30,7 @@ process.setMaxListeners(0);
 io.on("connection", (socket) => {
   const client = new Client({
     puppeteer: {
-      args: ["--no-sandbox"],
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
       headless: true,
     },
   });

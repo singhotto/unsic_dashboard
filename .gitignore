@@ -4,3 +4,7 @@ node_modules
 ./node_modules
 ./.env
 ./client/node_modules
+./Dockerfile
+Dockerfile
+docker-compose.yml
+/client/Dockerfile

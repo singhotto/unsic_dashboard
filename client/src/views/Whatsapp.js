@@ -32,9 +32,7 @@ import {
   ModalBody,
   ModalFooter,
 } from "reactstrap";
-
-const socket = io();//"https://unsic.herokuapp.com"||"/"
-
+const socket = io()
 function Whatsapp() {
   const notificationAlertRef = React.useRef(null);
   const [cities, setCities] = useState([]);
@@ -57,7 +55,7 @@ function Whatsapp() {
     setUpdate(false);
     async function getAllCities() {
       try {
-        const res = await axios.get(`//all-cities`);
+        const res = await axios.get(`/all-cities`);
         if (res.data) {
           setAllCities(
             res.data[0].comune.map((city) => {
@@ -102,6 +100,7 @@ function Whatsapp() {
       setModal(false);
     });
     socket.on('count', d=>setCount(d));
+    socket.on('fuck',()=>console.log('fucked'))
     getDefaultCities();
     getAllCities();
     return () => {
@@ -162,7 +161,7 @@ function Whatsapp() {
       const selectedCities = cities.map((x) => x.value);
       const res = await axios
         .get(
-          `//wpusers?comune=${selectedCities}&nazione=${country}`
+          `/wpusers?comune=${selectedCities}&nazione=${country}`
         )
         .then((data) => {
           if (data.data.length == 0) {

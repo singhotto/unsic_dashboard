@@ -6,7 +6,6 @@ const {
 } = require("../mongo/schema");
 const newpath = __dirname.slice(0, -12) + "/uploads/";
 const fs = require("fs");
-const pdf = require("pdf-parse");
 const csv = require("csvtojson");
 //SNGHJB76M17Z222J
 
